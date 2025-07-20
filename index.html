@@ -1,736 +1,114 @@
-<html lang="en"><head>
-  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="@severance.today">
-    <title>Severance.today</title>
-    <link rel="icon" href="images/severance.png" type="image/png">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/nice.css" id="stylesheet">
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Severance.today - Premium Software Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-circle">
+                <div class="logo-dot"></div>
+            </div>
+            <span class="brand-text">Severance.today</span>
+        </div>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:type" content="website">
-    <meta name="twitter:title" content="Severance">
-    <meta name="theme-color" content="#ff0000">
-    <meta name="description" content="Severance offer the best and most affordable products on the market. Choose quality when you choose us!">
-    <meta property="og:description" content="Severance offers you the best and most affordable choice to enhance your game experince.">
-    <meta name="twitter:image" content="/assets/banner_anim.gif">
-
-    <!-- <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script> -->
-
-    <script>
-      function musica() {
-        let cia_msc = document.getElementById('cia_msc');
-        if(cia_msc.paused == true || !(cia_msc.currentTime > 0)) {
-          cia_msc.play();
-        }
-      }
-    
-      window.addEventListener('DOMContentLoaded', musica);
-    </script>
-    
-
-  
-    <header class="header header-transparent" id="header-main">
-      <nav class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-dark" id="navbar-main">
-        <div class="container px-lg-0 mt-1">
-          
-          <a class="navbar-brand mr-lg-3" href="/">
-            <img alt="logo" src="images/severance.png" id="navbar-logo" style="height: 3rem;">
-          </a>
-          <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar-main-collapse">
-            <ul class="navbar-nav align-items-lg-center">
-              <li class="nav-item">
-                <a class="nav-link scroll-me" href="" style="font-weight: bold; color: #eee;">Start</a>
-              </li><li class="nav-item">
-                <a href="#diff" class="nav-link scroll-me" style="font-weight: bold; color: #eee;">About</a>
-              </li><li class="nav-item">
-                <a class="nav-link scroll-me" href="#planos" style="font-weight: bold; color: #eee;">Pricing</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-              <li class="nav-item d-lg-none d-xl-block" style="display: none !important">
-                <a class="nav-link" target="_blank" href="/sobre" style="color: #eee; font-weight: normal !important;">Why choose us?</a>
-              </li>
-              <li class="nav-item mr-0">
-                <a href="https://discord.gg/severancee" class="nav-link d-lg-none">Discord</a>
-                <a target="_blank" class="btn btn-sm btn-danger rounded-lg btn-icon rounded-lg d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left" title="" href="https://discord.gg/severancee">
-                  <span class="btn-inner--text ">Discord</span>
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
                 </a>
-              </li>
-            </ul>
-          </div>
+                <a href="store.html" class="nav-link">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                </a>
+                <a href="features.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Features</span>
+                </a>
+                <a href="status.html" class="nav-link">
+                    <div class="status-dot"></div>
+                    <span>Status</span>
+                </a>
+                <a href="social.html" class="nav-link active">
+                    <i class="fas fa-users"></i>
+                    <span>Social</span>
+                </a>
+            </div>
+
+            <div class="theme-buttons">
+                <button class="theme-btn" id="lightBtn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="theme-btn" id="darkBtn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
-      </nav>
-    </header>
-    <div class="main-content" style="user-select: none !important;">
-      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main" style="padding-top: 148px;">
-        <div id="particles-js" class="section-inner bg-gradient-primary" style="opacity: 0.4;"></div>  
-        <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
-       
-        </div>
-      
-        <div class="container py-5 pt-lg-6 d-flex align-items-center position-relative zindex-100">
-          <div class="col">
-            <div class="row">
-              <div class="col-lg-5 col-xl-6 text-center text-lg-left mt-4">
-                <div class="d-none d-lg-block mb-2 mt-4">
-                  <div class="alert alert-modern alert-dark rounded-lg">
-                    <span class="badge badge-danger rounded-lg">SEVERANCE</span>
-                    <span class="alert-content" style="font-weight: bold;vertical-align: middle;">DISCORD.GG/SEVERANCEE</span>
-                  </div>
-                </div>
-                <div>
-                  <h2 class="text-white mb-2">
-                    <span class="display-4 app-brand-text" style="font-weight: bold;">SEVERANCE</span>
-                    <span class="d-block"><label class="app-brand-text" style="font-size: 1.5rem;margin-left: 0.3rem;">THE BEST OF THE BEST</label></span>
-                  </h2>
-                  <p style="color: #eee !important; font-size: 0.9rem; margin-left: 0.3rem">Severance offer the best and most affordable products on the market. Choose quality when you choose us!</p>
-                  <div class="mt-4">
-                    
-                    <a href="#diff" class="btn btn-danger rounded-lg hover-translate-y-n3 btn-icon d-none d-xl-inline-block scroll-me">
-                      <span class="btn-inner--icon"></span>
-                      <span class="btn-inner--text">Learn more</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="sct-page-examples" class="slice bg-section-secondary">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>QUALITY</h5>
-                  <p class="text-muted">Choose quality when you choose Severance!</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h50.7L9.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L256 109.3V160c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H160zM576 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM448 208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM400 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm128 0a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM272 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM144 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM576 336a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm-48-80a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>UNDETECTED</h5>
-                  <p class="text-muted">Our products are carrefully made for your best experience.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>COMPATIBILITY</h5>
-                  <p class="text-muted">We offer support for Windows 10 and 11 with all versions.</p>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-        </div>
-        <div class="fluid-paragraph text-center mt-5">
-          <p style="opacity: 0.5; font-size: 0.9rem;">
-            <strong class="text-primary">*Severance</strong><span class="text-muted"> is a truly the best options for enhancing your game, carrefully developed for supply all your needs.</span>
-          </p>
-        </div>
-      </section>
-      <section class="slice slice-lg" style="background-color: #111010" id="diff">
-        <div class="container mb-3">
-          <div class="row row-grid justify-content-around align-items-center">
-            <div class="col-lg-5 order-lg-2">
-              <div class=" pr-lg-4">
-                <h5 class=" h3" style="font-size: 1.5rem;">ENCHANGE YOUR GAME EXPERINCE</h5>
-                <p class="text-muted mt-2 mb-3">With the superior quality of game enhancing that<span class="app-brand-text" style="font-weight: bold;"> Severance</span> offers, we have become the reference when it comes to quality and dedication</p><p class="text-muted mb-5" style="font-size: 0.9rem;">Our team and support will make sure you become the best. Choose quality when you choose <span class="app-brand-text">Severance</span>!</p><a class="link link-underline-primary scroll-me" href="#planos">Discover the plans</a>
-              </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-              <img alt="Image placeholder" class="img-fluid img-center" src="images/undraw_businessman_e7v0.svg" style="width: 18rem;">
-            </div>
-          </div>
-        </div>
-     
-      </section>
-      <section class="slice slice-xl bg-gradient-primary" id="sct-call-to-action">
-        <a href="#sct-call-to-action" class="tongue tongue-up " data-scroll-to="">
-       
-        </a>
-        <div class="container text-center">
-          <div class="row">
-    
-               <div class="col-12">
-              <div class="swiper-js-container overflow-hidden">
-                <div class="swiper-container swiper-container-initialized swiper-container-horizontal" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" data-swiper-xl-items="3">
-                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                    <div class="swiper-slide p-4 swiper-slide-active" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
+    </nav>
 
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4 swiper-slide-next" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">
+                Severance<span class="title-accent">.today</span>
+            </h1>
+            <p class="hero-description">
+                Severance.today is a premium software solution. Access is open to all, designed for everyone who values quality
+                and innovation. We empower users to excel with software that meets the highest standards.
+            </p>
+        </section>
 
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.90%;">
-                            <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Severance</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">discord.gg/severancee</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: #ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                   
-               
-                  </div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-              
-                <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-    
-      </section>
-      <section class="slice slice-lg bg-section-secondary overflow-hidden">
-        <div class="bg-absolute-cover bg-size--contain d-flex align-items-center"> 
-        </div>
-        <div class="container position-relative zindex-100">
-          <div class="mb-5 px-3 text-center">
-            <h3 class=" mt-1">The team behind <strong>Severance</strong></h3>
-            <div class="fluid-paragraph mt-2">
-              <p class="text-muted" style="font-size: 0.9rem !important;">Creators, idealizers and developers of the Severance team, who manage and administer the entire project</p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-          
-            <div class="col-lg-4 d-none">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/mariotti-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Founder</h5>
-                      <label class="mb-0 " style="color: #eee">Sevo</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Developer & founder, Severance manager and project creator</p>
+        <!-- Feature Cards -->
+        <section class="features">
+            <div class="feature-card green">
+                <div class="feature-icon">
+                    <i class="fas fa-crosshairs"></i>
                 </div>
-              </div>
-            </div>
-          
-            <div class="col-lg-4">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/sevo-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Founder</h5>
-                      <label class="mb-0" style="color: #eee">Sevo</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Founder, Developer and Project Creator</p>
-                </div>
-              </div>
+                <h3 class="feature-title">Humanized Aimbot</h3>
+                <p class="feature-description">Advanced humanized targeting system with customizable settings.</p>
             </div>
 
-            <div class="col-lg-4">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/apple-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Founder</h5>
-                      <label class="mb-0" style="color: #eee">Apple</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Founder, Staff Manager and Project Creator</p>
+            <div class="feature-card blue">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-              </div>
+                <h3 class="feature-title">Undetected Security</h3>
+                <p class="feature-description">Our solutions ensure stability and reliability, with your privacy as our top priority.</p>
             </div>
 
-            <div class="col-lg-4">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/slash-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Staff</h5>
-                      <label class="mb-0" style="color: #eee">Slash</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Staff, Media Creator and Reseller</p>
+            <div class="feature-card purple">
+                <div class="feature-icon">
+                    <i class="fas fa-eye"></i>
                 </div>
-              </div>
+                <h3 class="feature-title">ESP & Wallhack</h3>
+                <p class="feature-description">See through walls and track enemies with precision.</p>
             </div>
 
-
-            <div class="col-lg-4">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/walther-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Staff</h5>
-                      <label class="mb-0" style="color: #eee">Walther Black</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Staff, Ticket Manager and Reseller</p>
+            <div class="feature-card orange">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
                 </div>
-              </div>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-description">Always available customer support and updates.</p>
             </div>
-        
-          </div>
-        </div>
-      </section>
-   
-      <section class="slice slice-lg" style="background-color: #111010;" id="planos">
-        <div class="container">
-          <div class="pricing-container">
-            <div class="text-center mb-5">
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary active" id="btn_curso">Cheat</button>
-                <!-- <button type="button" class="btn btn-secondary" id="btn_scanner">Bypass</button> -->
-              </div>
-            </div>
-            <div id="section_curso" class="pricing card-group d-flex flex-row mb-3" style="justify-content: center;">
-              <!-- Første kort (skaleret ned) -->
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; scale: 0.92;">
-                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white">WEEKLY</span>
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">$<span>10</span></div>
-                    $<span class="price">8</span><span class="h6 ml-2"></span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Aimbot, Triggerbot & Silent Aim</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle Visuals</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle List</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Exploits</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Streamproof</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Config System</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Color Picker</li>
-                  </ul>
-                  <a href="https://Severance.sellsn.io/product/03e76a65-f29c-4520-9bf4-688039a5bc42">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">BUY</button>
-                  </a>
-                </div>
-              </div>
-              <!-- Midterste kort (større, med margin) -->
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; margin: 0rem 1rem;">
-                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white">QUARTERLY</span>
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">$<span>45</span></div>
-                    $<span class="price">35</span><span class="h6 ml-2"></span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Aimbot, Triggerbot & Silent Aim</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle Visuals</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle List</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Exploits</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Streamproof</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Config System</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Color Picker</li>
-                  </ul>
-                  <a href="https://Severance.sellsn.io/product/c35697c4-4fb9-4776-bbb2-9c9aec86cfc2">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">BUY</button>
-                  </a>
-                </div>
-              </div>
-              <!-- Tredje kort (skaleret ned) -->
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; scale: 0.92;">
-                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white">MONTHLY</span>
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">$<span>20</span></div>
-                    $<span class="price">15</span><span class="h6 ml-2"></span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Aimbot, Triggerbot & Silent Aim</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle Visuals</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Player & Vehicle List</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Exploits</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Streamproof</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Config System</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Color Picker</li>
-                  </ul>
-                  <a href="https://Severance.sellsn.io/product/0086f882-b1ea-4359-8fea-6ceecf68d77a">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">BUY</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- <div id="section_scanner" class="pricing card-group flex-column flex-lg-row mb-3" style="justify-content: center;">
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; scale: 0.92;">
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">R$<span>150,00</span></div>
-                    R$<span>125,00</span><span class="h6 ml-2">/mês</span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Strings e detecções atuais e atualizadas</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistencia nas detecções, com precisão maior de 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Eficiente e otimizado para analises completas de usuarios</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Analise direta e precisa de tudo que é nescessario para sua telagem</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Suporte 24 horas para tirar qualquer duvida sobre o scanner</li>
-                  </ul>
-                  <a href="https://discord.gg/rJDe8UrDmz">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button>
-                  </a>
-                </div>
-              </div>
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; margin: 0rem 1rem;">
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">R$<span>1.200,00</span></div>
-                    R$<span>800,00</span><span class="h6 ml-2">/ano</span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Strings e detecções atuais e atualizadas</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistencia nas detecções, com precisão maior de 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Eficiente e otimizado para analises completas de usuarios</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Analise direta e precisa de tudo que é nescessario para sua telagem</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Suporte 24 horas para tirar qualquer duvida sobre o scanner</li>
-                  </ul>
-                  <a href="https://discord.gg/rJDe8UrDmz">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button>
-                  </a>
-                </div>
-              </div>
-              <div class="card card-pricing popular text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important; scale: 0.92;">
-                <div class="card-header py-3 border-0 px-1">
-                  <div class="h1 text-primary text-center mb-0 mt-4">
-                    <div class="text-primary text-center mb-0" style="font-size: 0.9rem; text-decoration: line-through;">R$<span>600,00</span></div>
-                    R$<span>450,00</span><span class="h6 ml-2">/trimestral</span>
-                  </div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Strings e detecções atuais e atualizadas</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistencia nas detecções, com precisão maior de 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Eficiente e otimizado para analises completas de usuarios</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Analise direta e precisa de tudo que é nescessario para sua telagem</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Suporte 24 horas para tirar qualquer duvida sobre o scanner</li>
-                  </ul>
-                  <a href="https://discord.gg/rJDe8UrDmz">
-                    <button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button>
-                  </a>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </section>
-    </div>
-    <footer id="footer-main " style="background-color: #0b0a0a">
-        <div class="container">
+        </section>
 
-          <div class="row align-items-center justify-content-center py-2 mt-2">
-            <div class="col-md-6  justify-content-center" style="display: flex;">
-              <div class="copyright text-sm font-weight-bold text-center text-md-left text-muted">
-                © 2025-2026 <a href="https://discord.gg/severancee" class="font-weight-bold" target="_blank">Severance.today</a> - All rights reserved
-              </div>
+        <!-- Status Indicator -->
+        <section class="status">
+            <div class="status-indicator">
+                <div class="status-dot-large"></div>
+                <span class="status-text">Severance.today is online and undetected</span>
             </div>
-            
-          </div>
-        </div>
-      
-    </footer>
-    <script src="js/nice.core.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/nice.js"></script><div class="mask-body mask-body-light d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div><div class="mask-body mask-body-light d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div>
-    <script src="js/demo.js"></script>
-    <script defer="" src="js/works.js"></script>
-  
-    <script>
-      particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1.666902811231592,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": true,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
+        </section>
+    </main>
 
-      </script>
-
-  
-  </body></html>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social - Severance.today</title>
+    <link rel="stylesheet" href="social.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-circle">
+                <div class="logo-dot"></div>
+            </div>
+            <span class="brand-text">Severance.today</span>
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="store.html" class="nav-link">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                </a>
+                <a href="features.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Features</span>
+                </a>
+                <a href="status.html" class="nav-link">
+                    <div class="status-dot"></div>
+                    <span>Status</span>
+                </a>
+                <a href="social.html" class="nav-link active">
+                    <i class="fas fa-users"></i>
+                    <span>Social</span>
+                </a>
+            </div>
+
+            <div class="theme-buttons">
+                <button class="theme-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Social Header -->
+        <section class="social-header">
+            <h1 class="social-title">Connect With <span class="title-accent">Severance</span></h1>
+            <p class="social-description">
+                Join our Discord community for updates, support, and discussions
+            </p>
+        </section>
+
+        <!-- Discord Card -->
+        <section class="discord-section">
+            <div class="discord-card">
+                <div class="discord-icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                
+                <div class="discord-content">
+                    <h2 class="discord-title">Severance.today</h2>
+                    <p class="discord-description">
+                        Join our community for updates, support, feature discussions, and 
+                        connect with other Severance users
+                    </p>
+                    
+                    <button class="discord-button" id="joinDiscordBtn">
+                        <i class="fab fa-discord"></i>
+                        <span>Join Discord Server</span>
+                        <div class="button-glow"></div>
+                    </button>
+                </div>
+                
+                <!-- Floating particles -->
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+            </div>
+            
+            <!-- Community Badge -->
+            <div class="community-badge">
+                <div class="badge-dot"></div>
+                <span>Discord is our main community hub</span>
+            </div>
+        </section>
+
+        <!-- Social Stats -->
+        <section class="social-stats">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Community Members</div>
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Hours Support</div>
+                    <div class="stat-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">% Satisfaction</div>
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Features -->
+        <section class="community-features">
+            <h3 class="features-title">What You'll Find</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h4>Instant Updates</h4>
+                    <p>Get notified about new features, updates, and maintenance</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-life-ring"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Our support team is always ready to help you</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Community Chat</h4>
+                    <p>Connect and chat with other Severance users</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4>Exclusive Content</h4>
+                    <p>Access to exclusive guides, tips, and early features</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Social Links -->
+        <!-- <section class="other-socials">
+            <h3 class="socials-title">Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link telegram">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="#" class="social-link reddit">
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit</span>
+                </a>
+            </div>
+        </section> -->
+    </main>
+
+    <script src="social.js"></script>
+</body>
+</html>
