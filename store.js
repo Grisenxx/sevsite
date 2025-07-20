@@ -20,13 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (planTitle.includes('Week')) {
                 // Week plan
-                paymentUrl = 'https://severance.paylix.gg/product/687cf34003ca0';
+                paymentUrl = 'https://severance.mypaylix.gg/product/severance-fivem-week';
             } else if (planTitle.includes('Month')) {
                 // Month plan
-                paymentUrl = 'https://severance.paylix.gg/product/687cf34c2b894';
-            } else if (planTitle.includes('Day')) {
-                // Day plan - you might want to add a URL for this too
-                paymentUrl = 'https://severance.paylix.gg/product/day-plan-id'; // Replace with actual day plan URL
+                paymentUrl = 'https://severance.mypaylix.gg/product/severance-fivem-month';
             } else {
                 // Fallback
                 paymentUrl = 'https://severance.paylix.gg/';
