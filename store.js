@@ -4,12 +4,40 @@ document.addEventListener('DOMContentLoaded', function() {
     
     purchaseButtons.forEach(button => {
         button.addEventListener('click', function() {
+            // Add click animation
+            this.style.transform = 'translateY(-2px) scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-2px) scale(1)';
+            }, 150);
+            
+            // Get the plan details
             const card = this.closest('.pricing-card');
             const planTitle = card.querySelector('.plan-title').textContent;
             const planPrice = card.querySelector('.plan-price').textContent;
             
-            alert(`Redirecting to payment for ${planTitle} - ${planPrice}`);
-            // Here you would redirect to your payment processor
+            // Determine which URL to use based on the plan
+            let paymentUrl;
+            
+            if (planTitle.includes('Week')) {
+                // Week plan
+                paymentUrl = 'https://severance.paylix.gg/product/687cf34003ca0';
+            } else if (planTitle.includes('Month')) {
+                // Month plan
+                paymentUrl = 'https://severance.paylix.gg/product/687cf34c2b894';
+            } else if (planTitle.includes('Day')) {
+                // Day plan - you might want to add a URL for this too
+                paymentUrl = 'https://severance.paylix.gg/product/day-plan-id'; // Replace with actual day plan URL
+            } else {
+                // Fallback
+                paymentUrl = 'https://severance.paylix.gg/';
+            }
+            
+            // Open payment page in new tab after animation
+            setTimeout(() => {
+                window.open(paymentUrl, '_blank');
+            }, 300);
+            
+            console.log(`Redirecting to ${planTitle} payment: ${paymentUrl}`);
         });
     });
     
