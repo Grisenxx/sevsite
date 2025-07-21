@@ -6,12 +6,6 @@
     <title>Severance.today - Premium Software Solution</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Vercel Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="https://cdn.vercel-insights.com/v1/script.debug.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -112,48 +106,42 @@
 
     <script src="script.js"></script>
     
-    <script>
-        // Vercel Analytics Custom Event Tracking
+    <!-- Vercel Analytics using inject() method -->
+    <script type="module">
+        import { inject } from 'https://cdn.skypack.dev/@vercel/analytics';
+        
+        // Initialize Vercel Analytics
+        inject();
+        
+        // Custom event tracking
         document.addEventListener('DOMContentLoaded', function() {
             // Track navigation clicks
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
                     const linkText = this.querySelector('span').textContent;
-                    if (window.va) {
-                        window.va('track', 'Navigation Click', {
-                            page: linkText,
-                            url: this.href
-                        });
-                    }
+                    // Custom events can be tracked here if needed
+                    console.log('Navigation clicked:', linkText);
                 });
             });
 
             // Track theme button clicks
             document.getElementById('lightBtn')?.addEventListener('click', function() {
-                if (window.va) {
-                    window.va('track', 'Theme Change', { theme: 'light' });
-                }
+                console.log('Light theme selected');
             });
 
             document.getElementById('darkBtn')?.addEventListener('click', function() {
-                if (window.va) {
-                    window.va('track', 'Theme Change', { theme: 'dark' });
-                }
+                console.log('Dark theme selected');
             });
 
             // Track feature card interactions
             document.querySelectorAll('.feature-card').forEach(card => {
                 card.addEventListener('click', function() {
                     const featureTitle = this.querySelector('.feature-title').textContent;
-                    if (window.va) {
-                        window.va('track', 'Feature Interest', {
-                            feature: featureTitle
-                        });
-                    }
+                    console.log('Feature clicked:', featureTitle);
                 });
             });
 
-            console.log('Vercel Analytics tracking initialized for Severance.today');
+            console.log('Vercel Analytics initialized with inject() method');
         });
     </script>
 </body>
