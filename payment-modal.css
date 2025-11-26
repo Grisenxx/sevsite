@@ -1,0 +1,283 @@
+/* Payment Modal Styles */
+.payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.payment-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.payment-modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #374151;
+}
+
+.modal-header h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+    background: #374151;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #374151;
+    border-top: 3px solid #dc2626;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Payment Details */
+.payment-details {
+    margin-bottom: 1.5rem;
+}
+
+.product-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #111827;
+    border-radius: 8px;
+}
+
+.product-info h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.payment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    font-size: 1.1rem;
+    padding: 1.25rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.secondary-btn {
+    background: #374151;
+    color: #d1d5db;
+    border: 1px solid #4b5563;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 0.75rem;
+}
+
+.secondary-btn:hover {
+    background: #4b5563;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Security Info */
+.security-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #059669;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+/* Success Modal */
+.success-modal .modal-content {
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+}
+
+.success-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+}
+
+.success-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Error Modal */
+.error-modal .modal-content {
+    text-align: center;
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+.error-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+}
+
+.error-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.method-item {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: #111827;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+}
+
+.method-item i {
+    font-size: 1.5rem;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.method-item i:hover {
+    color: #dc2626;
+}
+
+/* Success and Error Actions */
+.success-actions,
+.error-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .success-actions,
+    .error-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .secondary-btn {
+        margin-left: 0;
+    }
+}

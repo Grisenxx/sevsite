@@ -1,0 +1,32 @@
+{
+  "name": "severance-website",
+  "version": "1.0.0",
+  "description": "Severance.today - Premium Software Solution Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Building static site...' && echo 'Build complete!'",
+    "preview": "node server.js",
+    "legacy": "live-server --port=8080 --open=/index.html"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "@vercel/analytics": "^1.5.0",
+    "express": "^4.21.2",
+    "motion": "^12.23.24",
+    "three": "^0.181.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "keywords": [
+    "severance",
+    "website",
+    "gaming",
+    "software"
+  ],
+  "author": "Severance.today",
+  "license": "MIT"
+}

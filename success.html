@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success - Severance.today</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+            animation: successPulse 2s ease-in-out;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .success-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .success-message {
+            color: #d1d5db;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .action-btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .primary-action {
+            background: #dc2626;
+            color: white;
+        }
+        
+        .primary-action:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+        
+        .secondary-action {
+            background: transparent;
+            color: #d1d5db;
+            border: 1px solid #374151;
+        }
+        
+        .secondary-action:hover {
+            background: #374151;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-circle">
+                <div class="logo-dot"></div>
+            </div>
+            <span class="brand-text">Severance.today</span>
+        </div>
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="store.html" class="nav-link">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                </a>
+                <a href="features.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Features</span>
+                </a>
+                <a href="status.html" class="nav-link">
+                    <div class="status-dot"></div>
+                    <span>Status</span>
+                </a>
+                <a href="social.html" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Social</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h1 class="success-title">Payment Successful!</h1>
+            
+            <p class="success-message">
+                Thank you for your purchase! Your payment has been processed successfully. 
+                You will receive your product access details via email within the next few minutes.
+            </p>
+            
+            <div id="paymentDetails" class="success-message" style="font-size: 0.95rem; color: #9ca3af;">
+                <!-- Payment details will be populated by JavaScript -->
+            </div>
+            
+            <div class="success-actions">
+                <a href="store.html" class="action-btn primary-action">
+                    <i class="fas fa-store"></i>
+                    Continue Shopping
+                </a>
+                <a href="index.html" class="action-btn secondary-action">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Extract payment information from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paymentId = urlParams.get('payment_id');
+            const amount = urlParams.get('amount');
+            const status = urlParams.get('status');
+            
+            if (paymentId || amount) {
+                const detailsDiv = document.getElementById('paymentDetails');
+                let details = '';
+                
+                if (paymentId) {
+                    details += `Order ID: ${paymentId}<br>`;
+                }
+                if (amount) {
+                    details += `Amount: $${amount}<br>`;
+                }
+                if (status) {
+                    details += `Status: ${status.charAt(0).toUpperCase() + status.slice(1)}`;
+                }
+                
+                detailsDiv.innerHTML = details;
+            }
+            
+            // Track successful conversion
+            if (typeof gtag !== 'undefined' && urlParams.get('amount')) {
+                gtag('event', 'purchase', {
+                    transaction_id: urlParams.get('payment_id') || 'unknown',
+                    value: parseFloat(urlParams.get('amount')) || 0,
+                    currency: 'USD'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
