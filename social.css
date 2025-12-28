@@ -46,12 +46,6 @@ body::before {
     gap: 0.5rem;
 }
 
-.logo-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-
 .logo-circle {
     width: 24px;
     height: 24px;
