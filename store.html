@@ -6,7 +6,9 @@
     <title>Severance Store - Premium Software Plans</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="store.css">
-    <link href="https://cdn.paylix.gg/static/css/embed.css" rel="stylesheet"/>
+    <script async
+      src="https://js.stripe.com/v3/buy-button.js">
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -98,14 +100,11 @@
                         <span>Frequent Updates</span>
                     </div>
                 </div>
-                <button
-                    class="purchase-btn"
-                    data-paylixecommerce-product="687cf34003ca0"
-                    type="submit"
-                    alt="Buy Now with paylix.gg"
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1SmxIXJMJUFBmPnVS8SfjyOm"
+                  publishable-key="pk_live_51QXNcvJMJUFBmPnVl77sWVUFyBYijSU6kixBa4FNMRWVBqjjta08qJn9x76zaFSL8t6W5wvUArfsWU6V0F9kgUgT00Y25x6ryJ"
                 >
-                    Purchase
-                </button>
+                </stripe-buy-button>
             </div>
 
             <!-- Month Plan -->
@@ -137,14 +136,11 @@
                         <span>Frequent Updates</span>
                     </div>
                 </div>
-                <button
-                    class="purchase-btn"
-                    data-paylixecommerce-product="687cf34c2b894"
-                    type="submit"
-                    alt="Buy Now with paylix.gg"
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1SmxTeJMJUFBmPnVce2G7nxu"
+                  publishable-key="pk_live_51QXNcvJMJUFBmPnVl77sWVUFyBYijSU6kixBa4FNMRWVBqjjta08qJn9x76zaFSL8t6W5wvUArfsWU6V0F9kgUgT00Y25x6ryJ"
                 >
-                    Purchase
-                </button>
+                </stripe-buy-button>
             </div>
 
             <!-- Quarterly Plan -->
@@ -153,7 +149,7 @@
                     <h3 class="plan-title">FiveM - Quarterly</h3>
                     <p class="plan-subtitle"></p>
                 </div>
-                <div class="plan-price">34.99</div>
+                <div class="plan-price">39.99</div>
                 <div class="plan-features">
                     <div class="feature-item">
                         <i class="fas fa-circle"></i>
@@ -176,14 +172,11 @@
                         <span>Frequent Updates</span>
                     </div>
                 </div>
-                <button
-                    class="purchase-btn"
-                    data-paylixecommerce-product="692730207f7ef"
-                    type="submit"
-                    alt="Buy Now with paylix.gg"
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1SmxUzJMJUFBmPnVO4HIpDL6"
+                  publishable-key="pk_live_51QXNcvJMJUFBmPnVl77sWVUFyBYijSU6kixBa4FNMRWVBqjjta08qJn9x76zaFSL8t6W5wvUArfsWU6V0F9kgUgT00Y25x6ryJ"
                 >
-                    Purchase
-                </button>
+                </stripe-buy-button>
             </div>
         </section>
 
@@ -263,9 +256,6 @@
         </section>
     </main>
 
-    <!-- Paylix Embed System -->
-    <script src="https://cdn.paylix.gg/static/js/embed.js"></script>
-    
     <!-- Local Scripts -->
     <script src="store.js"></script>
 </body>

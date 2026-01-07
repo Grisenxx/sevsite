@@ -1,19 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Simple button animations - let Paylix eCommerce plugin handle payments
-    const purchaseButtons = document.querySelectorAll('.purchase-btn');
-    
-    purchaseButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Add click animation only
-            this.style.transform = 'translateY(-2px) scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'translateY(-2px) scale(1)';
-            }, 150);
-            
-            console.log('Purchase button clicked - Paylix eCommerce plugin will handle payment');
-            // No custom API calls - let the eCommerce plugin do everything
-        });
-    });
+    // Stripe payment buttons are handled automatically
+    // No custom JavaScript needed for Stripe buy buttons
     
     // Reseller button functionality
     const resellerBtn = document.querySelector('.reseller-btn');
