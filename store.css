@@ -296,39 +296,6 @@ body::before {
     box-shadow: 0 10px 20px rgba(185, 28, 28, 0.3);
 }
 
-/* Stripe Buy Button Styling */
-stripe-buy-button {
-    width: 100%;
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-stripe-buy-button::part(button) {
-    width: 100%;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    background: #dc2626 !important;
-    color: white !important;
-    height: 48px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-stripe-buy-button::part(button):hover {
-    background: #b91c1c !important;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(185, 28, 28, 0.3);
-}
-
 /* What's Included */
 .whats-included {
     margin-bottom: 4rem;
