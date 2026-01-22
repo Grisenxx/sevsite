@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const resellerBtn = document.querySelector('.reseller-btn');
     if (resellerBtn) {
         resellerBtn.addEventListener('click', function() {
-            // Add click animation
             this.style.transform = 'translateY(-2px) scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'translateY(0) scale(1)';
