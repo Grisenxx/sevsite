@@ -1,17 +1,54 @@
+// Stripe Configuration
+const STRIPE_PUBLIC_KEY = 'pk_live_51QXNcvJMJUFBmPnVl77sWVUFyBYijSU6kixBa4FNMRWVBqjjta08qJn9x76zaFSL8t6W5wvUArfsWU6V0F9kgUgT00Y25x6ryJ';
+const stripe = Stripe(STRIPE_PUBLIC_KEY);
+
+const PRICES = {
+    weekly: 'price_1SmxAPJMJUFBmPnV8rAswysU',
+    monthly: 'price_1SmxSWJMJUFBmPnVPgnYcqVB',
+    quarterly: 'price_1SmxUEJMJUFBmPnVeO2rWhtz'
+};
+
+async function checkout(priceId) {
+    try {
+        const { error } = await stripe.redirectToCheckout({
+            lineItems: [{ price: priceId, quantity: 1 }],
+            mode: 'payment',
+            successUrl: window.location.origin + '/success.html',
+            cancelUrl: window.location.origin + '/store.html',
+        });
+
+        if (error) {
+            console.error('Stripe error:', error);
+            alert('Payment error: ' + error.message);
+        }
+    } catch (err) {
+        console.error('Checkout error:', err);
+        alert('Something went wrong. Please try again.');
+    }
+}
+
+function buyWeekly() {
+    checkout(PRICES.weekly);
+}
+
+function buyMonthly() {
+    checkout(PRICES.monthly);
+}
+
+function buyQuarterly() {
+    checkout(PRICES.quarterly);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Simple button animations - let Paylix eCommerce plugin handle payments
+    // Button animations
     const purchaseButtons = document.querySelectorAll('.purchase-btn');
     
     purchaseButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Add click animation only
             this.style.transform = 'translateY(-2px) scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'translateY(-2px) scale(1)';
             }, 150);
-            
-            console.log('Purchase button clicked - Paylix eCommerce plugin will handle payment');
-            // No custom API calls - let the eCommerce plugin do everything
         });
     });
     
