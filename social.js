@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simulate Discord redirect
     setTimeout(() => {
-        window.open('https://discord.gg/J2zu3dbyRY', '_blank');
+        window.open('https://discord.gg/Cc9gkUk9hC', '_blank');
     }, 300);
     });
     
