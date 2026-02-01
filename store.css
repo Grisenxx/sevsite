@@ -274,6 +274,9 @@ body::before {
 }
 
 .purchase-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -288,12 +291,14 @@ body::before {
     color: white;
     margin-top: 1.5rem;
     height: 48px;
+    text-decoration: none;
 }
 
 .purchase-btn:hover {
     background: #b91c1c;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(185, 28, 28, 0.3);
+    color: white;
 }
 
 /* What's Included */
