@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></svg>
+            </svg>
+        </button>
+        <span class="mobile-title">Documentation</span>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>Severance Docs</span>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-container">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search docs...">
+            <kbd class="search-shortcut">CTRL + K</kbd>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Getting Started -->
+            <div class="nav-section">
+                <div class="nav-section-title" data-section="getting-started">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                    </svg>
+                    Getting Started
+                </div>
+                <ul class="nav-items" id="getting-started">
+                    <li><a href="#introduction" class="nav-link active" data-page="introduction">Introduction</a></li>
+                </ul>
+            </div>
+
+            <!-- Spoofer -->
+            <div class="nav-section">
+                <div class="nav-section-title" data-section="spoofer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    Spoofer
+                </div>
+                <ul class="nav-items" id="spoofer">
+                    <li><a href="#advanced-features" class="nav-link" data-page="advanced-features">Advanced Features</a></li>
+                    <li><a href="#errors" class="nav-link" data-page="errors">Errors</a></li>
+                </ul>
+            </div>
+
+            <!-- API Reference -->
+            <div class="nav-section">
+                <div class="nav-section-title" data-section="api">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    FiveM External
+                </div>
+                <ul class="nav-items" id="api">
+                    <li><a href="#advanced-features-fivem" class="nav-link" data-page="advanced-features-fivem">Advanced Features</a></li>
+                    <li><a href="#errors-fivem" class="nav-link" data-page="errors-fivem">Errors</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="sidebar-footer">
+            <div class="footer-text">
+                <span>severance.today</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Page content will be loaded here -->
+            <article class="page-content" id="pageContent">
+                <!-- Introduction Page (Default) -->
+                <div class="page" id="page-introduction">
+                    <div class="page-header">
+                        <span class="page-category">Getting Started</span>
+                        <h1>Introduction</h1>
+                        <p class="page-description">Welcome to the documentation. Learn how to get started after purchase.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="callout callout-info">
+                            <div class="callout-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </div>
+                            <div class="callout-content">
+                                <strong>Tip:</strong> Use the search bar or press <kbd>CTRL + K</kbd> to quickly find what you're looking for.
+                            </div>
+                        </div>
+                        <h2 id="what-is-this">How to get started?</h2>
+                        <p>To start off, purchase a subscription at <a href="https://severance.today">severance.today</a>.</p>
+
+                        <h2 id="features">What should i do next?</h2>
+                        <p>Check your mail, you should have recieved a mail with details about your purchase.</p>
+                        <p>You should see a discord invite link for our customers discord, and a key for our product.</p>
+                        <p>For your own security, we recommend using an second account to join our customers discord on, and doing everything on a browser with Incognito.</p>
+                        <p>Once your join our discord, you should see a channel called #claim-role, in there you can claim your role with your key, to get access to the community, download and support.</p>
+                        <p>When you have claimed your role, you should see a #download channel, in there you can find the latest version of the product and a direct tutorial on how to download our software.</p>
+                    </div>
+                </div>
+
+                <!-- Advanced Features Page -->
+                <div class="page hidden" id="page-advanced-features">
+                    <div class="page-header">
+                        <span class="page-category">Spoofer</span>
+                        <h1>Advanced Features</h1>
+                        <p class="page-description"></p>
+                    </div>
+
+                    <div class="content-body">
+                        <h2 id="async-operations">Our Features</h2>
+                        <ul>
+                            <li><strong>Anti Spoof bypass</strong> - Our bypass works on all types of bans, including hardware and anti-cheat bans.</li>
+                            <li><strong>Static Serials</strong> - We spoof all necessary hardware identifiers; these remain active until your next PC restart.</li>
+                            <li><strong>Supports all ACs</strong> - We support all major anti-cheats and ban systems.</li>
+                        </ul>
+
+                        <h2 id="async-operations">Our Compatibility & Support:</h2>
+                        <ul>
+                            <li><strong>Easy Setup & Cleaning</strong> - We offer a streamlined setup and cleaning process to ensure a smooth experience.</li>
+                            <li><strong>All Windows Versions</strong> - Full compatibility with all versions of Windows 10 and Windows 11.</li>
+                            <li><strong>No Factory Reset Needed</strong> - Our solution works instantly without the need to wipe your PC.</li>
+                            <li><strong>Full AnyDesk Support</strong> - Our team is available to assist you directly via AnyDesk if needed.</li>
+                            <li><strong>Static & Dynamic Methods</strong> - Flexible spoofing methods tailored to your specific needs.</li>
+                        </ul>
+
+                        <h2 id="middleware">Our Guarantees:</h2>
+                        <ul>
+                            <li><strong>Hardware / CFX Unban ✓</strong></li>
+                            <li><strong>Global Unban ✓</strong></li>
+                            <li><strong>Server Unban ✓</strong></li>
+                            <li><strong>V3PVP Unban ✓</strong></li>
+                            <li><strong>GLife Unban ✓</strong></li>
+                            <li><strong>FiniAC Unban ✓</strong></li>
+                            <li><strong>TxAdmin Unban ✓</strong></li>
+                            <li><strong>All Anti-Cheat Unbans ✓</strong></li>
+                            <li><strong>Supports FiniAC, FiveGuard, FiveEye, Reaper, Phoenix, Waveshield & more ✓</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Best Practices Page -->
+                <div class="page hidden" id="page-errors">
+    <div class="page-header">
+        <span class="page-category">Spoofer Support</span>
+        <h1>Errors</h1>
+        <p class="page-description"></p>
+    </div>
+
+    <div class="content-body">
+        <div class="callout callout-info">
+            <div class="callout-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </div>
+            <div class="callout-content">
+                <strong>Important:</strong> Always run the spoofer as Administrator for these fixes to work correctly.
+            </div>
+        </div>
+
+        <div class="callout callout-warning">
+            <div class="callout-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </div>
+            <div class="callout-content">
+                <strong>Warning:</strong> Always restart your pc before playing any other game when spoofed.
+            </div>
+        </div>
+
+        <h2 id="common-errors">Common Error Codes</h2>
+        <ul>
+            <li><strong>0x000020</strong> - Sync system time in Windows settings.</li>
+            <li><strong>0x800700E1</strong> - Operation failed: Disable all Antivirus and Windows Defender.</li>
+            <li><strong>0x00001</strong> - Virtualization is disabled. Please enable it in your BIOS.</li>
+            <li><strong>0x00002</strong> - Driver blocklist enabled. Disable everything in Core Isolation or disable Faceit AC.</li>
+            <li><strong>0x00005</strong> - Vanguard detected. You must fully Exit Vanguard, not just hide it.</li>
+            <li><strong>Failed to load vulnerable driver</strong> - Run fixall.bat (from #downloads) as admin and restart your PC.</li>
+        </ul>
+    </div>
+</div>
+
+                <!-- API Endpoints Page -->
+                <div class="page hidden" id="page-advanced-features-fivem">
+                    <div class="page-header">
+                        <span class="page-category">FiveM External</span>
+                        <h1>Advanced Features</h1>
+                        <p class="page-description"></p>
+                    </div>
+
+                    <div class="content-body">
+                        <h2 id="aimbot-features">Aimbot Features</h2>
+<ul>
+    <li><strong>Aimbot & Silent Aim</strong> - Advanced aim assistance with smooth movement, FOV customization, and silent bullet redirection.</li>
+    <li><strong>Specialized Targeting</strong> - Tire aimbot with height offset and closest bone targeting system.</li>
+    <li><strong>Triggerbot</strong> - Lightning-fast automatic shooting when your crosshair is on a target.</li>
+    <li><strong>Magic Bullet</strong> - High-tier bullet manipulation for advanced play.</li>
+    <li><strong>Optimization</strong> - Distance checks, visibility checks, and filtering for NPCs and dead players.</li>
+</ul>
+
+<h2 id="visual-features">Visuals (ESP) & Overlays</h2>
+<ul>
+    <li><strong>Player ESP</strong> - Detailed boxes, skeletons, head circles, and "China Hat" visuals with health/armor bars.</li>
+    <li><strong>Information Display</strong> - See player names, weapons, distance, and friend status in real-time.</li>
+    <li><strong>Vehicle ESP</strong> - Track vehicles with names, distance, and filters for occupied cars.</li>
+    <li><strong>2D Radar</strong> - Stay aware with a customizable circular or square radar tracking all nearby players.</li>
+    <li><strong>Spectator List</strong> - Always know exactly who is watching you in-game.</li>
+    <li><strong>Custom Crosshair</strong> - Fully customizable dot or crosshair overlays.</li>
+</ul>
+
+<h2 id="exploit-features">Movement & Exploits</h2>
+<ul>
+    <li><strong>Self Exploits</strong> - Noclip with speed control, infinite stamina, no collision, and anti-headshot.</li>
+    <li><strong>Combat Enhancements</strong> - Macro strafe automation and peak assist with visual indicators.</li>
+    <li><strong>Vehicle Mods</strong> - Godmode, advanced tuning (traction/acceleration), and instant repair/unlock.</li>
+    <li><strong>Instant Teleport</strong> - Teleport to waypoints, coordinates from clipboard, players, or vehicles.</li>
+</ul>
+
+<h2 id="utility-features">Player & Vehicle Management</h2>
+<ul>
+    <li><strong>Interactive Lists</strong> - Full player and vehicle lists with distance filtering and teleport options.</li>
+    <li><strong>Social System</strong> - Add/remove friends and copy player outfits instantly.</li>
+    <li><strong>Vehicle Control</strong> - Remotely lock or unlock vehicles from a distance.</li>
+</ul>
+
+<h2 id="system-settings">System & Streamproof</h2>
+<ul>
+    <li><strong>Streamproof</strong> - Full bypass for OBS and other recording software; play undetected on stream.</li>
+    <li><strong>Config System</strong> - Easily import/export your settings via clipboard or files.</li>
+    <li><strong>Stealth & Performance</strong> - Stealth mode, VSync limiting, and support for moving the overlay to a second monitor.</li>
+    <li><strong>Customization</strong> - Full control over color schemes, keybinds, and watermarks (FPS/Time).</li>
+</ul>
+
+<h2 id="security-cleanup">Unload & Advanced Security</h2>
+<ul>
+    <li><strong>Safe Unload</strong> - Instant removal from the system to remain invisible during manual inspections.</li>
+    <li><strong>Deep Trace Cleaning</strong> - Automated system-wide cleanup that wipes all internal execution traces.</li>
+    <li><strong>Privacy Scrubbing</strong> - Clears all software-related activity footprints across the entire system.</li>
+    <li><strong>Kernel Cleanup</strong> - Deep-level removal of temporary residues and sensitive memory strings.</li>
+    <li><strong>Zero-Trace Policy</strong> - Ensures no configuration files or digital fingerprints are left behind.</li>
+</ul>
+                    </div>
+                </div>
+
+                <!-- Authentication Page -->
+                <div class="page hidden" id="page-errors-fivem">
+    <div class="page-header">
+        <span class="page-category">FiveM External</span>
+        <h1>Error Codes & Solutions</h1>
+        <p class="page-description">Find solutions to common loader and execution errors below.</p>
+    </div>
+
+    <div class="content-body">
+        <h2 id="common-errors">Common Execution Errors</h2>
+        <ul>
+            <li><strong>The term './xxxxxxxx' is not recognized</strong> - ERROR1 in #errors</li>
+            <li><strong>Module Load Failed (E103)</strong> - Both videoes from #errors-fixes-videoes</li>
+            <li><strong>Download failed: Exception calling 'DownloadData'</strong> - "ANTIVIRUS FIXES" - #errors-fixes-videoes</li>
+            <li><strong>Download failed: Exception calling 'Load'</strong> - "ANTIVIRUS FIXES" - #errors-fixes-videoes</li>
+            <li><strong>Execution failed: Could not load file or assembly</strong> - "ANTIVIRUS FIXES" - #errors-fixes-videoes</li>
+            <li><strong>[Loader] Mapping failed!</strong> - Both videoes from #errors-fixes-videoes</li>
+        </ul>
+
+        <div class="callout callout-info">
+            <div class="callout-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </div>
+            <div class="callout-content">
+                <strong>Important:</strong> Always run the loader as Administrator to prevent permission-based mapping failures.
+            </div>
+        </div>
+
+        <h2 id="required-installs">Required System Components</h2>
+        <p>If the software fails to launch, ensure these Microsoft components are installed:</p>
+        
+        <div class="code-block">
+            <div class="code-header">
+                <span class="code-language">DirectX & Visual C++</span>
+            </div>
+            <pre><code class="language-bash">- VC Runtimes
+https://aka.ms/vc14/vc_redist.x64.exe
+https://aka.ms/vc14/vc_redist.x86.exe
+https://aka.ms/highdpimfc2013x64enu
+https://aka.ms/highdpimfc2013x86enu
+
+- DXWebsetup
+https://www.microsoft.com/en-us/download/details.aspx?id=35</code></pre>
+        </div>
+    </div>
+</div>
+
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-nav" id="pageNav">
+                <a href="#" class="page-nav-link prev" id="prevPage">
+                    <span class="page-nav-label">Previous</span>
+                    <span class="page-nav-title">Introduction</span>
+                </a>
+                <a href="#" class="page-nav-link next" id="nextPage">
+                    <span class="page-nav-label">Next</span>
+                    <span class="page-nav-title">Installation</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <aside class="toc" id="toc">
+            <div class="toc-title">On this page</div>
+            <ul class="toc-list" id="tocList">
+                <!-- Generated dynamically -->
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-modal-input" id="searchModalInput" placeholder="Search documentation...">
+                <kbd class="search-close">ESC</kbd>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">
+                    <p>No recent searches</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="docs.js"></script>
+</body>
+</html>

@@ -4,13 +4,15 @@
     { "source": "/store", "destination": "/store.html" },
     { "source": "/features", "destination": "/features.html" },
     { "source": "/status", "destination": "/status.html" },
-    { "source": "/social", "destination": "/social.html" }
+    { "source": "/social", "destination": "/social.html" },
+    { "source": "/docs", "destination": "/docs.html" }
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/store.html", "destination": "/store", "permanent": true },
     { "source": "/features.html", "destination": "/features", "permanent": true },
     { "source": "/status.html", "destination": "/status", "permanent": true },
-    { "source": "/social.html", "destination": "/social", "permanent": true }
+    { "source": "/social.html", "destination": "/social", "permanent": true },
+    { "source": "/docs.html", "destination": "/docs", "permanent": true }
   ]
 }
