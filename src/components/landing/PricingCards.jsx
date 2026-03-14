@@ -8,6 +8,7 @@ const plans = [
     price: "$9.99",
     period: "/ week",
     description: "Try it out risk-free",
+    link: "https://buy.stripe.com/aFa6oJ8a85vFfee0urfrW04",
     popular: false,
     features: [
       "FiveM External",
@@ -22,6 +23,7 @@ const plans = [
     price: "$19.99",
     period: "/ month",
     description: "Most popular choice",
+    link: "https://buy.stripe.com/00wdRbcqo9LV1no90XfrW05",
     popular: true,
     features: [
       "FiveM External",
@@ -36,6 +38,7 @@ const plans = [
     price: "$44.99",
     period: "/ 3 months",
     description: "Best value — save 25%",
+    link: "https://buy.stripe.com/14A00l9ec1fpd66gtpfrW06",
     popular: false,
     features: [
       "FiveM External",
@@ -126,15 +129,18 @@ export default function PricingCards() {
                 </div>
 
                 {/* CTA */}
-                <button
-                  className={`w-full py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 mb-8 ${
-                    plan.popular
-                      ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
-                      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
-                  }`}
-                >
-                  Get Started
-                </button>
+<a
+  href={plan.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`w-full py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 mb-8 text-center block ${
+    plan.popular
+      ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
+      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
+  }`}
+>
+  Get Started
+</a>
 
                 {/* Features */}
                 <ul className="space-y-3">
