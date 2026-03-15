@@ -5,9 +5,20 @@ import IMAGE_CLEAN from "./images/esp-clean.png";
 import IMAGE_ESP from "./images/esp-active.png";
 
 export default function ESPComparison() {
-  const [sliderPos, setSliderPos] = useState(50); // percentage
+  const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef(null);
+
+  // Track container width for correct image sizing
+  useEffect(() => {
+    const update = () => {
+      if (containerRef.current) setContainerWidth(containerRef.current.offsetWidth);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const updateSlider = useCallback((clientX) => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -101,14 +112,14 @@ export default function ESPComparison() {
 
             {/* ESP image clipped to the left side */}
             <div
-              className="absolute inset-0 overflow-hidden"
+              className="absolute top-0 left-0 h-full overflow-hidden"
               style={{ width: `${sliderPos}%` }}
             >
               <img
                 src={IMAGE_ESP}
                 alt="With ESP"
-                className="absolute inset-0 w-full h-full object-cover select-none"
-                style={{ width: containerRef.current?.offsetWidth ?? "100%", maxWidth: "none" }}
+                className="absolute top-0 left-0 h-full select-none"
+                style={{ width: containerWidth ? `${containerWidth}px` : "100vw", maxWidth: "none", objectFit: "cover" }}
                 draggable={false}
               />
             </div>
