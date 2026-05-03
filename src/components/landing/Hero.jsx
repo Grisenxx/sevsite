@@ -75,7 +75,7 @@ export default function Hero() {
         >
           <a
             href="#pricing"
-            className="group relative px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-semibold text-sm tracking-wide transition-all duration-300 shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_rgba(239,68,68,0.4)]"
+            className="px-8 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/70 hover:text-white font-medium text-sm tracking-wide transition-all duration-300"
           >
             View Pricing
           </a>

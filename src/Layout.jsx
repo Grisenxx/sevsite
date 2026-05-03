@@ -206,7 +206,8 @@ function TurnstileGate({ onVerified }) {
 }
 
 export default function Layout({ children }) {
-  const [verified, setVerified] = useState(false);
+  // Cloudflare verification disabled for now
+  const [verified, setVerified] = useState(true);
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white antialiased">
@@ -232,11 +233,13 @@ export default function Layout({ children }) {
         }
       `}</style>
 
+      {/*
       {!verified && (
         <TurnstileGate onVerified={() => setVerified(true)} />
       )}
+      */}
 
-      {/* Site content — rendered but hidden until verified to avoid layout flash */}
+      {/* Site content */}
       <div style={{ visibility: verified ? "visible" : "hidden" }}>
         {children}
       </div>
