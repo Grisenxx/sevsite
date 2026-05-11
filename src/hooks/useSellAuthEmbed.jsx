@@ -1,68 +1,39 @@
 'use client';
-import React, { useState, useCallback, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 const API_BASE_URL = 'https://api-internal-3.sellauth.com/v1';
 
-const HiddenAltcha = forwardRef(({ onStateChange }, ref) => {
-  const widgetRef = useRef(null);
-  const [value, setValue] = useState(null);
+// Mounts a single invisible altcha-widget into document.body.
+// We fetch the challenge ourselves (avoids CORS issues with widget's internal fetch)
+// then configure the widget with the challenge data before calling verify().
+function AltchaPortal({ widgetRef }) {
   const [isReady, setIsReady] = useState(false);
 
-  useImperativeHandle(ref, () => ({
-    get value() {
-      return value;
-    }
-  }), [value]);
-
   useEffect(() => {
-    const load = async () => {
-      try {
-        await import('altcha');
-        await customElements.whenDefined('altcha-widget');
-        setIsReady(true);
-      } catch (error) {
-        console.error('Failed to load altcha:', error);
-      }
-    };
-    load();
+    import('altcha')
+      .then(() => customElements.whenDefined('altcha-widget'))
+      .then(() => setIsReady(true))
+      .catch((e) => console.error('altcha load failed', e));
   }, []);
-
-  useEffect(() => {
-    if (!isReady || !widgetRef.current) return;
-    const widget = widgetRef.current;
-    const handleStateChange = (ev) => {
-      if ('detail' in ev) {
-        const payload = ev.detail.payload || null;
-        setValue(payload);
-        onStateChange?.(ev);
-      }
-    };
-    widget.addEventListener('statechange', handleStateChange);
-    return () => widget.removeEventListener('statechange', handleStateChange);
-  }, [isReady, onStateChange]);
 
   if (!isReady) return null;
 
   return createPortal(
     <altcha-widget
       ref={widgetRef}
-      challengeurl={`${API_BASE_URL}/altcha`}
-      auto="onload"
-      hidefooter={true}
-      hidelogo={true}
+      hidefooter="true"
+      hidelogo="true"
       style={{
         display: 'none',
         position: 'absolute',
         top: '-9999px',
         left: '-9999px',
-        '--altcha-max-width': '100%',
       }}
     />,
     document.body
   );
-});
-HiddenAltcha.displayName = 'HiddenAltcha';
+}
 
 function CheckoutModal({ url, onClose }) {
   return createPortal(
@@ -95,56 +66,61 @@ function CheckoutModal({ url, onClose }) {
   );
 }
 
+/**
+ * Fetches the altcha challenge from SellAuth and solves it via the widget.
+ * We do the challenge fetch ourselves so the browser's CORS preflight goes
+ * through our code (with proper mode/credentials), rather than the widget's
+ * internal fetch which can fail silently on some setups.
+ */
+async function solveAltcha(widget) {
+  // 1. Fetch the challenge
+  const res = await fetch(`${API_BASE_URL}/altcha`, {
+    method: 'GET',
+    headers: { Accept: 'application/json' },
+  });
+  if (!res.ok) throw new Error(`Altcha challenge request failed: ${res.status}`);
+  const challenge = await res.json();
+
+  // 2. Hand the pre-fetched challenge to the widget and solve it
+  if (typeof widget.configure === 'function') {
+    await widget.configure({ challenge });
+  }
+  if (typeof widget.reset === 'function') widget.reset();
+
+  const result = await widget.verify();
+  return result?.payload ?? null;
+}
+
 export function useSellAuthEmbed() {
   const [isLoading, setIsLoading] = useState(false);
   const [modalUrl, setModalUrl] = useState(null);
-  const [altchaKey, setAltchaKey] = useState(0);
-  const altchaRef = useRef(null);
-  // Keep token in a ref so the checkout callback always reads the latest value
-  // without needing to be recreated every time the state updates.
-  const altchaTokenRef = useRef(null);
-
-  const handleCaptchaStateChange = useCallback((ev) => {
-    if (ev.detail?.state === 'verified') {
-      altchaTokenRef.current = ev.detail.payload;
-    }
-  }, []);
+  const widgetRef = useRef(null);
 
   const closeModal = useCallback(() => setModalUrl(null), []);
 
   const checkout = useCallback(async ({ cart, shopId, modal = true, scrollTop = true }) => {
     if (isLoading) return;
-
-    // Wait up to 5 s for the proof-of-work captcha to finish
-    if (!altchaTokenRef.current) {
-      setIsLoading(true);
-      const deadline = Date.now() + 5000;
-      await new Promise((resolve) => {
-        const interval = setInterval(() => {
-          if (altchaTokenRef.current || Date.now() >= deadline) {
-            clearInterval(interval);
-            resolve();
-          }
-        }, 100);
-      });
-    }
-
-    if (!altchaTokenRef.current) {
-      setIsLoading(false);
-      alert('Could not verify captcha. Please refresh and try again.');
-      return;
-    }
-
     setIsLoading(true);
     try {
+      const widget = widgetRef.current;
+      if (!widget || typeof widget.verify !== 'function') {
+        throw new Error('Captcha widget not ready. Please wait a moment and try again.');
+      }
+
+      const altchaPayload = await solveAltcha(widget);
+      if (!altchaPayload) {
+        throw new Error('Captcha verification failed. Please try again.');
+      }
+
       const response = await fetch(`${API_BASE_URL}/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cart, shopId, altcha: altchaTokenRef.current }),
+        body: JSON.stringify({ cart, shopId, altcha: altchaPayload }),
       });
       const data = await response.json();
       if (data.error) throw new Error(data.error);
       if (!data.url) throw new Error('No checkout URL returned. Please try again.');
+
       if (modal) {
         setModalUrl(data.url);
         if (scrollTop) window.scrollTo(0, 0);
@@ -156,8 +132,6 @@ export function useSellAuthEmbed() {
       alert(error instanceof Error ? error.message : 'An error occurred during checkout');
     } finally {
       setIsLoading(false);
-      altchaTokenRef.current = null;
-      setAltchaKey((prev) => prev + 1);
     }
   }, [isLoading]);
 
@@ -165,7 +139,7 @@ export function useSellAuthEmbed() {
     checkout,
     isLoading,
     closeModal,
-    captcha: <HiddenAltcha key={altchaKey} ref={altchaRef} onStateChange={handleCaptchaStateChange} />,
+    captcha: <AltchaPortal widgetRef={widgetRef} />,
     modal: modalUrl ? <CheckoutModal url={modalUrl} onClose={closeModal} /> : null,
   };
 }

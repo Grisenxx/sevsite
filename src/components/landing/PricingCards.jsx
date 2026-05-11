@@ -5,7 +5,7 @@ import { SellAuthButton } from "../../hooks/useSellAuthEmbed";
 
 // TODO: Replace productId, variantId, and shopId with your real SellAuth values
 // from your SellAuth Dashboard (Products page & API access page).
-const SHOP_ID = 91082; // ← your shopId
+const SHOP_ID = 211519; // ← your shopId
 
 const plans = [
   {
@@ -13,7 +13,7 @@ const plans = [
     price: "$9.99",
     period: "/ week",
     description: "Try it out risk-free",
-    cart: [{ productId: 35665, variantId: 120121, quantity: 1 }], // ← weekly product
+    cart: [{ productId: 716710, variantId: 1151698, quantity: 1 }], // ← weekly product
     popular: false,
     features: [
       "FiveM External",
@@ -43,7 +43,7 @@ const plans = [
     price: "$44.99",
     period: "/ 3 months",
     description: "Best value — save 25%",
-    cart: [{ productId: 35665, variantId: 120123, quantity: 1 }], // ← quarterly product
+    cart: [{ productId: 716712, variantId: 1151705, quantity: 1 }], // ← quarterly product
     popular: false,
     features: [
       "FiveM External",
@@ -102,8 +102,8 @@ export default function PricingCards() {
               key={plan.name}
               variants={cardVariants}
               className={`relative group rounded-2xl p-[1px] transition-all duration-500 ${plan.popular
-                  ? "bg-gradient-to-b from-red-500/50 via-red-500/20 to-transparent"
-                  : "bg-white/[0.06] hover:bg-white/[0.08]"
+                ? "bg-gradient-to-b from-red-500/50 via-red-500/20 to-transparent"
+                : "bg-white/[0.06] hover:bg-white/[0.08]"
                 }`}
             >
               {plan.popular && (
@@ -137,8 +137,8 @@ export default function PricingCards() {
                   shopId={SHOP_ID}
                   modal={true}
                   className={`w-full py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 mb-8 text-center flex items-center justify-center ${plan.popular
-                      ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
-                      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
+                    ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
+                    : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
                     }`}
                 />
 
