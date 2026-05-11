@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
+import { SellAuthButton } from "../../hooks/useSellAuthEmbed";
+
+// TODO: Replace productId, variantId, and shopId with your real SellAuth values
+// from your SellAuth Dashboard (Products page & API access page).
+const SHOP_ID = 91082; // ← your shopId
 
 const plans = [
   {
@@ -8,7 +13,7 @@ const plans = [
     price: "$9.99",
     period: "/ week",
     description: "Try it out risk-free",
-    link: "https://buy.stripe.com/aFa6oJ8a85vFfee0urfrW04",
+    cart: [{ productId: 35665, variantId: 120121, quantity: 1 }], // ← weekly product
     popular: false,
     features: [
       "FiveM External",
@@ -23,7 +28,7 @@ const plans = [
     price: "$19.99",
     period: "/ month",
     description: "Most popular choice",
-    link: "https://buy.stripe.com/00wdRbcqo9LV1no90XfrW05",
+    cart: [{ productId: 716510, variantId: 1151333, quantity: 1 }], // ← monthly product
     popular: true,
     features: [
       "FiveM External",
@@ -38,7 +43,7 @@ const plans = [
     price: "$44.99",
     period: "/ 3 months",
     description: "Best value — save 25%",
-    link: "https://buy.stripe.com/14A00l9ec1fpd66gtpfrW06",
+    cart: [{ productId: 35665, variantId: 120123, quantity: 1 }], // ← quarterly product
     popular: false,
     features: [
       "FiveM External",
@@ -96,11 +101,10 @@ export default function PricingCards() {
             <motion.div
               key={plan.name}
               variants={cardVariants}
-              className={`relative group rounded-2xl p-[1px] transition-all duration-500 ${
-                plan.popular
+              className={`relative group rounded-2xl p-[1px] transition-all duration-500 ${plan.popular
                   ? "bg-gradient-to-b from-red-500/50 via-red-500/20 to-transparent"
                   : "bg-white/[0.06] hover:bg-white/[0.08]"
-              }`}
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
@@ -111,9 +115,8 @@ export default function PricingCards() {
                 </div>
               )}
 
-              <div className={`relative h-full rounded-2xl p-8 ${
-                plan.popular ? "bg-[#0f0f18]" : "bg-[#0a0a0f]"
-              }`}>
+              <div className={`relative h-full rounded-2xl p-8 ${plan.popular ? "bg-[#0f0f18]" : "bg-[#0a0a0f]"
+                }`}>
                 {/* Plan name */}
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold tracking-wide text-red-400 uppercase">
@@ -129,18 +132,16 @@ export default function PricingCards() {
                 </div>
 
                 {/* CTA */}
-<a
-  href={plan.link}
-  target="_blank"
-  rel="noopener noreferrer"
-  className={`w-full py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 mb-8 text-center block ${
-    plan.popular
-      ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
-      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
-  }`}
->
-  Get Started
-</a>
+                <SellAuthButton
+                  cart={plan.cart}
+                  shopId={SHOP_ID}
+                  modal={true}
+                  className={`w-full py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 mb-8 text-center flex items-center justify-center ${plan.popular
+                      ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
+                      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.06]"
+                    }`}
+                />
+
 
                 {/* Features */}
                 <ul className="space-y-3">
