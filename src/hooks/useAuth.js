@@ -23,7 +23,6 @@ login: async (username, password, product_id = "severance") => {
       timestamp: Date.now()
     });
 
-    // Accept normal successful login
     if (res.success) {
       set({
         user: {
@@ -37,28 +36,6 @@ login: async (username, password, product_id = "severance") => {
       });
 
       return { success: true };
-    }
-
-    // Ignore HWID mismatch and still log in
-    if (
-      res.error &&
-      res.error.toLowerCase().includes("hwid mismatch")
-    ) {
-      set({
-        user: {
-          username,
-          session_token: res.session_token || "HWID_BYPASS",
-          expiry: res.expiry || null,
-          product: product_id
-        },
-        isAuthenticated: true,
-        isLoading: false
-      });
-
-      return {
-        success: true,
-        bypassed: true
-      };
     }
 
     throw new Error(res.error || "Login failed");
