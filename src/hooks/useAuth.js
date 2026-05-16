@@ -10,37 +10,70 @@ const useAuthStore = create(
       isLoading: false,
       error: null,
 
-      login: async (username, password, product_id = "severance") => {
-        set({ isLoading: true, error: null });
-        try {
-          const res = await apiRequest({
-            login: true,
-            username,
-            password,
-            product_id,
-            hwid: "WEB_DASHBOARD",
-            timestamp: Date.now()
-          });
+login: async (username, password, product_id = "severance") => {
+  set({ isLoading: true, error: null });
 
-          if (res.success) {
-            set({
-              user: {
-                username,
-                session_token: res.session_token,
-                expiry: res.expiry,
-                product: product_id
-              },
-              isAuthenticated: true,
-              isLoading: false
-            });
-            return { success: true };
-          }
-          throw new Error(res.error || "Login failed");
-        } catch (error) {
-          set({ error: error.message, isLoading: false });
-          return { success: false, error: error.message };
-        }
-      },
+  try {
+    const res = await apiRequest({
+      login: true,
+      username,
+      password,
+      product_id,
+      hwid: "WEB_DASHBOARD",
+      timestamp: Date.now()
+    });
+
+    // Accept normal successful login
+    if (res.success) {
+      set({
+        user: {
+          username,
+          session_token: res.session_token,
+          expiry: res.expiry,
+          product: product_id
+        },
+        isAuthenticated: true,
+        isLoading: false
+      });
+
+      return { success: true };
+    }
+
+    // Ignore HWID mismatch and still log in
+    if (
+      res.error &&
+      res.error.toLowerCase().includes("hwid mismatch")
+    ) {
+      set({
+        user: {
+          username,
+          session_token: res.session_token || "HWID_BYPASS",
+          expiry: res.expiry || null,
+          product: product_id
+        },
+        isAuthenticated: true,
+        isLoading: false
+      });
+
+      return {
+        success: true,
+        bypassed: true
+      };
+    }
+
+    throw new Error(res.error || "Login failed");
+  } catch (error) {
+    set({
+      error: error.message,
+      isLoading: false
+    });
+
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+},
 
       activate: async (license_key, username, password, product_id = "severance") => {
         set({ isLoading: true, error: null });
