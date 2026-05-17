@@ -62,24 +62,24 @@ export default function ESPComparison() {
   return (
     <section id="esp-comparison" className="relative py-32 px-6">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-red-600/8 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-red-600/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-xs font-medium tracking-[0.2em] uppercase text-red-400">
+          <span className="text-xs font-semibold tracking-widest uppercase text-red-500">
             See The Difference
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
-            Advanced ESP Visuals
+          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-100">
+            Tactical Awareness
           </h2>
-          <p className="mt-4 text-[#8b8b9e] text-lg max-w-lg mx-auto">
+          <p className="mt-4 text-zinc-400 text-lg max-w-lg mx-auto">
             Our ESP gives you complete awareness of your surroundings. See enemies through walls
             and never get caught off guard.
           </p>
@@ -91,7 +91,7 @@ export default function ESPComparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_0_80px_rgba(0,0,0,0.6)]"
+          className="relative rounded-3xl overflow-hidden border border-zinc-700/50 shadow-[0_0_80px_rgba(0,0,0,0.6)]"
           style={{ userSelect: "none" }}
         >
           {/* Container */}
@@ -126,27 +126,27 @@ export default function ESPComparison() {
 
             {/* Divider line */}
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-white/70 shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+              className="absolute top-0 bottom-0 w-[2px] bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.8)]"
               style={{ left: `calc(${sliderPos}% - 1px)` }}
             />
 
             {/* Handle */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#0d0d14] border-2 border-white/30 shadow-[0_0_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-col-resize z-10 transition-transform duration-100"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-red-500 border-4 border-zinc-900 shadow-[0_0_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-col-resize z-10 transition-transform duration-100"
               style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%) scale(${isDragging ? 1.15 : 1})` }}
             >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M6 4L2 9L6 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 4L16 9L12 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
+                <path d="M6 4L2 9L6 14" stroke="#09090b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 4L16 9L12 14" stroke="#09090b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
             {/* Labels */}
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-xs font-semibold text-white tracking-wider uppercase">
-              ESP On
+            <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-700/50 text-xs font-bold text-red-400 tracking-wider uppercase shadow-lg">
+              ESP Active
             </div>
-            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-xs font-semibold text-[#8b8b9e] tracking-wider uppercase">
-              ESP Off
+            <div className="absolute top-6 right-6 px-4 py-1.5 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-700/50 text-xs font-bold text-zinc-400 tracking-wider uppercase shadow-lg">
+              Disabled
             </div>
 
             {/* Drag hint */}
@@ -155,7 +155,7 @@ export default function ESPComparison() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/10 text-xs text-white/60 pointer-events-none"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-700/50 text-xs font-medium text-zinc-300 pointer-events-none shadow-xl"
               >
                 Drag to compare
               </motion.div>

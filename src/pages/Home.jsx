@@ -9,7 +9,7 @@ import Navbar from "../components/landing/Navbar";
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0a0f] text-white">
+    <div className="bg-zinc-950 text-zinc-100 min-h-screen selection:bg-red-500/30 selection:text-red-50 font-sans">
       <Navbar />
       <div className="pt-16">
         <Hero />
