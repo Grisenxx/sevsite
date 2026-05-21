@@ -1,6 +1,6 @@
 import xxtea from 'xxtea-node';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://shimmery-dan-nonpaternally.ngrok-free.dev/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://public.eatmyballs.xyz/api';
 const XXTEA_KEY = import.meta.env.VITE_XXTEA_KEY || 'NIGGERSEVERANCEISONTOPFUCKALLJEWSYALLAH0067!';
 
 async function prepareKey(keyStr) {
