@@ -1,9 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Flame } from "lucide-react";
-import { SellAuthButton } from "../../hooks/useSellAuthEmbed";
-
-const SHOP_ID = 211519;
 
 const plans = [
   {
@@ -11,7 +8,7 @@ const plans = [
     price: "$9.99",
     period: "/ week",
     description: "Try it out risk-free",
-    cart: [{ productId: 716710, variantId: 1151698, quantity: 1 }],
+    url: "https://severance.mysellauth.com/product/severance-weekly",
     popular: false,
     features: [
       "FiveM External",
@@ -26,7 +23,7 @@ const plans = [
     price: "$19.99",
     period: "/ month",
     description: "Most popular choice",
-    cart: [{ productId: 716510, variantId: 1151333, quantity: 1 }],
+    url: "https://severance.mysellauth.com/product/severance-monthly",
     popular: true,
     features: [
       "FiveM External",
@@ -41,7 +38,7 @@ const plans = [
     price: "$44.99",
     period: "/ 3 months",
     description: "Best value — save 25%",
-    cart: [{ productId: 716712, variantId: 1151705, quantity: 1 }],
+    url: "https://severance.mysellauth.com/product/severance-quarterly",
     popular: false,
     features: [
       "FiveM External",
@@ -138,16 +135,21 @@ export default function PricingCards() {
               </ul>
 
               {/* CTA */}
-              <SellAuthButton
-                cart={plan.cart}
-                shopId={SHOP_ID}
-                modal={true}
+              <a
+                href={plan.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`w-full py-4 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 flex items-center justify-center ${
                   plan.popular
                     ? "bg-red-600 hover:bg-red-500 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]"
                     : "bg-transparent border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white"
                 }`}
-              />
+              >
+                <span>Get Started</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="size-5 ml-2" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M230.14,58.87A8,8,0,0,0,224,56H62.68L56.6,22.57A8,8,0,0,0,48.73,16H24a8,8,0,0,0,0,16h18L67.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,160,204a28,28,0,1,0,28-28H91.17a8,8,0,0,1-7.87-6.57L80.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,230.14,58.87ZM104,204a12,12,0,1,1-12-12A12,12,0,0,1,104,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,200,204Zm4-74.57A8,8,0,0,1,196.1,136H77.22L65.59,72H214.41Z" />
+                </svg>
+              </a>
             </motion.div>
           ))}
         </motion.div>
